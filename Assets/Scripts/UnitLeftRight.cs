@@ -2,35 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnitToRight : BaseUnit
+public class UnitLeftRight : BaseUnit
 {
     private float xLimit = 10;
-    private float xStart = -10;
+    
 
     // Start is called before the first frame update
     public override void Start()
     {
-        Name = "To Right";
+        Name = "Left Right";
         Speed = 5;
-        
+        Move(0, 0, 0);
+
     }
 
     // Update is called once per frame
     public override void Update()
     {
+        
         base.Update();     
     }
 
     public override void Move()
     {
-        if (transform.position.x > xLimit)
-        {
-            Move(xStart, 0, 0);
-        }
-        else
-        {
-            Move(transform.position + Vector3.right * Time.deltaTime * Speed);
-        }
+        ChangeDirection(transform.position.x, -xLimit, xLimit);
+        Move(transform.position + Vector3.right * Speed * Time.deltaTime * Direction);
         
         base.Move();
     }
