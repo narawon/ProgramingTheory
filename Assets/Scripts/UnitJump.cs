@@ -5,7 +5,7 @@ using UnityEngine;
 public class UnitJump : BaseUnit
 {
     private float yLimit = 5;
-    private float direction = 1;
+    
 
     // Start is called before the first frame update
     public override void Start()
@@ -16,15 +16,9 @@ public class UnitJump : BaseUnit
     }
     public override void Move()
     {
-        if (transform.position.y > yLimit)
-        {
-            direction = -1;
-        }
-        else if (transform.position.y < 0)
-        {
-            direction = 1;
-        }
-        transform.position += Vector3.up * Speed * direction * Time.deltaTime;
+        
+        ChangeDirection(transform.position.y, 0, yLimit);
+        transform.position += Vector3.up * Speed * Direction * Time.deltaTime;
         
         base.Move();
     }

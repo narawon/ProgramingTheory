@@ -13,6 +13,20 @@ public class BaseUnit : MonoBehaviour
 
     // ENCAPSULATION
     /// <summary>
+    /// keeps the moving direction (Read Only)
+    /// </summary>
+    /// 
+    private float m_direction = 1;
+    protected float Direction {
+        get
+        {
+            return m_direction;
+        }
+    } 
+
+
+    // ENCAPSULATION
+    /// <summary>
     /// Whenever name is set, it is displayed. Empty string cannot be assigned to name.
     /// </summary>
     private string m_name = "name";
@@ -61,6 +75,19 @@ public class BaseUnit : MonoBehaviour
             }
         }
     }
+
+    protected void ChangeDirection(float current, float min, float max)
+    {
+        if (current < min)
+        {
+            m_direction = 1;
+        }
+        else if (current > max)
+        {
+            m_direction = -1;
+        }
+    }
+
 
     // Start is called before the first frame update
     public virtual void Start()
