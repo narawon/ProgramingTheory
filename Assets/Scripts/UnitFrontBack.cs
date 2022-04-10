@@ -5,7 +5,7 @@ using UnityEngine;
 public class UnitFrontBack : BaseUnit
 {
     private static float zLimit = 10;
-    private static float direction = 1;
+    
 
     // Start is called before the first frame update
     public override void Start()
@@ -24,16 +24,10 @@ public class UnitFrontBack : BaseUnit
 
     public override void Move()
     {
-        if (transform.position.z > zLimit)
-        {
-            direction = -1;
-        }
-        else if (transform.position.z < -zLimit)
-        {
-            direction = 1;
-        }
+        
+        ChangeDirection(transform.position.z, -zLimit, zLimit);
 
-        transform.position += Vector3.forward * Speed * Time.deltaTime * direction;
+        transform.position += Vector3.forward * Speed * Time.deltaTime * Direction;
         base.Move();
     }
 }
