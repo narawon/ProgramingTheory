@@ -101,6 +101,7 @@ public class BaseUnit : MonoBehaviour
         Move();
     }
 
+    // ABSTRACTION
     /// <summary>
     /// Abstract method to be implemented by child class
     /// </summary>

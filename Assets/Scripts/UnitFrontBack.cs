@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// INHERITANCE
+/// <summary>
+/// Unit keeps moving back to front or vice versa. Inherits BaseUnit
+/// </summary>
 public class UnitFrontBack : BaseUnit
 {
     private static float zLimit = 10;

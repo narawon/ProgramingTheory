@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// INHERITANCE
+/// <summary>
+/// Unit keeps jumping. Inherits BaseUnit
+/// </summary>
 public class UnitJump : BaseUnit
 {
     private float yLimit = 5;

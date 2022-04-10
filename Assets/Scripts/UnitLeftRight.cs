@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// INHERITANCE
+/// <summary>
+/// Unit keeps moving left to right or vice versa. Inherits BaseUnit
+/// </summary>
 public class UnitLeftRight : BaseUnit
 {
     private float xLimit = 10;
@@ -32,11 +36,22 @@ public class UnitLeftRight : BaseUnit
     }
 
     // POLIMOPHISM
+    /// <summary>
+    /// Moves Unit to the (x, y, z) position
+    /// </summary>
+    /// <param name="x"></param>
+    /// <param name="y"></param>
+    /// <param name="z"></param>
     public void Move(float x, float y, float z)
     {
         transform.position = new Vector3(x, y, z);
     }
 
+    // PLIMORPHISM
+    /// <summary>
+    /// Moves Unit to the vector position
+    /// </summary>
+    /// <param name="position"></param>
     public void Move(Vector3 position)
     {
         transform.position = position;
